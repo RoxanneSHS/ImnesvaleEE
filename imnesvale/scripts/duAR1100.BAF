@@ -1,0 +1,123 @@
+IF
+Global("Chapter","GLOBAL",%bg2_chapter_6%)
+Global("duImnesInit","GLOBAL",0)
+Global("ShadowLordDead","GLOBAL",1)
+THEN
+Response #100
+ClearAllActions()
+StartCutSceneMode()
+StartCutScene("ducut")
+SetGlobal("duNotAlreadyClosed", "GLOBAL", 0)
+SetGlobal("duJugSpawnForKilling", "GLOBAL", 0)
+SetGlobal("duImnesInit", "GLOBAL", 1)
+SetGlobal("duMadSpawned", "GLOBAL", 0)
+ActionOverride("UHFarm01", DestroySelf())
+ActionOverride("UHFarm02", DestroySelf())
+ActionOverride("UHFarm03", DestroySelf())
+ActionOverride("atta", DestroySelf())
+ActionOverride("UHFem02", DestroySelf())
+ActionOverride("UHMan01", DestroySelf())
+ActionOverride("UHMan02", DestroySelf())
+ActionOverride("UHGirl01", DestroySelf())
+ActionOverride("GEMFar01", DestroySelf())
+ActionOverride("GEMJeb01", DestroySelf())
+ActionOverride("GEMFar02", DestroySelf())
+ActionOverride("Daar", DestroySelf())
+ActionOverride("UHKid01", DestroySelf())
+ActionOverride("UHKid02", DestroySelf())
+ActionOverride("UHKid03", DestroySelf())
+ActionOverride("madulf", DestroySelf())
+ActionOverride("UHOgre02", DestroySelf())
+ActionOverride("UHOgre03", DestroySelf())
+ActionOverride("UHOgre04", DestroySelf())
+ActionOverride("UHOgre05", DestroySelf())
+ActionOverride("UHFem01", DestroySelf())	
+ActionOverride("UHMay01", DestroySelf())
+CreateCreature("dumayor", [3730.2765], 0)
+CreateCreature("duwife", [3681.2781], 0)
+ActionOverride("UHMer01", JumpToPoint([3504.2846]))
+ActionOverride("UHMer02", JumpToPoint([3456.2835]))
+ChangeEnemyAlly("dumayor", Controlled)
+ChangeEnemyAlly("duwife", Controlled)
+CreateCreature("duayrus", [4312.1667], 0)
+CreateCreature("dumaia", [3565.1683], 0)
+CreateCreature("duarim", [4900.3300], 0)
+SetGlobalTimer("duNewBanditSpawn", "GLOBAL", 60)
+SetGlobal("duNumOfBanditSpawns", "GLOBAL", 1)
+SetGlobal("duSpawnOneClosed", "GLOBAL", 0)
+SetGlobal("duSpawnTwoClosed", "GLOBAL", 0)
+End
+
+If
+Global("orgealliance", "GLOBAL", 1)
+Global("duMadSpawned", "GLOBAL", 0)
+Then
+Response #100
+SetGlobal("duMadSpawned", "GLOBAL", 1)
+CreateCreature("duMad", [3483.3051], 0)
+CreateCreature("duOgre01", [3575.3168], 0)
+CreateCreature("duOgre02", [3763.3117], 0)
+CreateCreature("duOgre03", [3763.3030], 0)
+CreateCreature("duOgre04", [3600.3100], 0)
+ChangeEnemyAlly("duMad", Controlled)
+ChangeEnemyAlly("duOgre01", Controlled)
+ChangeEnemyAlly("duOgre02", Controlled)
+ChangeEnemyAlly("duOgre03", Controlled)
+ChangeEnemyAlly("duOgre04", Controlled)
+End
+
+if
+GlobalTimerExpired("duNewBanditSpawn", "GLOBAL")
+GlobalLT("duNumOfBanditSpawns", "GLOBAL", 2)
+or(2)
+Global("duSpawnOneClosed", "GLOBAL", 0)
+Global("duSpawnTwoClosed", "GLOBAL", 0)
+then
+response #100
+CreateCreatureObject("duSpawn1", Player1, 0, 0, 0)
+CreateCreatureObject("duSpawn2", Player1, 0, 0, 0)
+IncrementGlobal("duNumOfBanditSpawns", "GLOBAL", 1)
+SetGlobalTimer("duNewBanditSpawn", "GLOBAL", 90)
+end
+
+If
+or(2)
+Dead("dumayor")
+Dead("duwife")
+Then
+Response #100
+Kill(Player1)
+ActionOverride(Player1, DestroySelf())
+END
+
+If
+Dead("duArim")
+Global("duJugSpawnForKilling", "GLOBAL", 0)
+Then
+Response #100
+SetGlobal("duJugSpawnForKilling", "GLOBAL", 1)
+CreateCreatureObject("dujug", Player1, 0, 0, 0)
+CreateCreatureObject("dubnd8", Player1, 0, 0, 0)				CreateCreatureObject("dubnd8", Player1, 0, 0, 0)
+CreateCreatureObject("dubnd9", Player1, 0, 0, 0)
+ActionOverride("duJug", StartDialogNoSet(Player1))
+End
+
+If
+Dead("duJug")
+Global("duNotAlreadyClosed", "GLOBAL", 0)
+then
+Response #100
+ChangeEnemyAlly("duMad", Neutral)
+ChangeEnemyAlly("duOgre01", Neutral)
+ChangeEnemyAlly("duOgre02", Neutral)
+ChangeEnemyAlly("duOgre03", Neutral)
+ChangeEnemyAlly("duOgre04", Neutral)
+ChangeEnemyAlly("dumayor", Neutral)
+ChangeEnemyAlly("duwife", Neutral)
+SetGlobal("duNotAlreadyClosed", "GLOBAL", 1)
+SetGlobal("duSpawnOneClosed", "GLOBAL", 1)
+SetGlobal("duSpawnTwoClosed", "GLOBAL", 1)
+DisplayStringHead(Player1, @98)
+end
+
+	
