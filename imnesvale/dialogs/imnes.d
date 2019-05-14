@@ -109,7 +109,7 @@ SAY @58
 IF ~~ THEN REPLY @57 EXIT
 END
 
-IF ~NumTimesTalkedTo(1)~ THEN BEGIN gratitude
+IF ~NumTimesTalkedTo(1)Dead("dujug")~ THEN BEGIN gratitude
 SAY @88
 IF ~~ THEN REPLY @89 DO ~GiveItemCreate("duRing", Player1, 1, 0, 0) ActionOverride("duwife", DestroySelf()) DestroySelf()~ EXIT
 END
@@ -121,7 +121,7 @@ SAY @59
 IF ~~ THEN REPLY @57 EXIT
 END
 
-IF ~NumTimesTalkedTo(1)~ THEN BEGIN thankyou
+IF ~NumTimesTalkedTo(1)Dead("dujug")~ THEN BEGIN thankyou
 SAY @101
 IF ~~ THEN REPLY @102 EXIT
 END
