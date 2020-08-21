@@ -46,7 +46,7 @@
 @46 = ~Wait! You're trying to trick me! I don't own a handkerchief! Now my minions shall destroy you.~
 @47 = ~Can't I ever fight a SANE bad guy? I mean, is that too much to ask?~
 @48 = ~Wait, don't tell me you're another bunch of goody two shoes, always interfering with the grand plans of a Bhaalspawn like myself. Well, regardless, I'm taking over this town! And for once evil has a decent chance to win!~
-@49 = ~Now my <LADYLORD> let me tell you what I have learned about our attackers......~
+@49 = ~Now, my <LADYLORD>, let me tell you what I have learned about our attackers......~
 @50 = ~They are led by a powerful mage called Jugend. He has two lieutenants, a mage named Ayrus and a mage called Maia. They each lead a section of his army. His son leads the third section. Beware his son, he is a powerful fighter and not to be trifled with.~
 @51 = ~Supposedly his army is almost without end, but in order for him to continue bringing in reinforcements, his two lieutenants and his son have to hold open portals.~
 @52 = ~By killing his son you will close the lower two portals, and by killing his lieutenants you will close the three upper portals.~
@@ -59,7 +59,7 @@
 @59 = ~Ahhh!!~
 @60 = ~We have come to fulfil our part of the bargain. We will help protect the village. Tell us what to do.~
 @61 = ~Great. Thank you for your help, Madulf.~
-@62 = ~Greetings protector of the forest. The spirits of the forest have come to aid you against the evil that threatens the land.~
+@62 = ~Greetings, protector of the forest. The spirits of the forest have come to aid you against the evil that threatens the land.~
 @63 = ~All help is appreciated. The coming fight will be extremely tough.~
 @64 = ~A spell trigger is fired!~
 @65 = ~A contingency is triggered!~
@@ -83,10 +83,7 @@ STATISTICS:
 
 STATISTICS:
     Reflects all ranged attacks
-    AC Bonus: +1
-   
-Unusuable by:
-    Wizard Slayer~
+    AC Bonus: +1~
 @76 = ~Robe~
 @77 = ~Battlemage's Robe~
 @78 = ~Identify it.~

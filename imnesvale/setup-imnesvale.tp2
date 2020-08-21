@@ -2,7 +2,7 @@ BACKUP ~imnesvale/backup~
 //AUTHOR ~Duality (Dualities.Shadow@gmail.com)~
 SUPPORT ~http:/baldursextendedworld.com/Vanilla_Forums/categories/mod-help~
 
-VERSION ~v3~
+VERSION ~v3.1~
 
 ALWAYS
 ACTION_IF (GAME_IS ~eet~) BEGIN
@@ -25,6 +25,10 @@ LANGUAGE ~English~
 LANGUAGE ~Russian (translation Viom & aerie.ru update by Serdrick)~ 
 ~Russian~ 
 ~imnesvale/russian/imnes.tra~
+
+LANGUAGE ~Deutsch~
+~German~
+~imnesvale/german/imnes.tra~
 
 BEGIN @104
 REQUIRE_PREDICATE GAME_IS ~eet bg2ee~ @103
